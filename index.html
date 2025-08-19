@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YnanoOne — My Interdisciplinary Portfolio</title>
+  <meta name="description" content="My interdisciplinary portfolio — nanotechnology, lithography simulation, and cross-domain projects." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #111723;
+      --muted: #9fb3c8;
+      --text: #e6eef6;
+      --accent: #62d2ff;
+      --accent-2: #8ef6d5;
+      --grid: rgba(98, 210, 255, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 80% -10%, rgba(98,210,255,.12), transparent),
+                  radial-gradient(900px 700px at -10% 20%, rgba(142,246,213,.10), transparent), var(--bg);
+      color: var(--text); line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+    header { position: sticky; top: 0; backdrop-filter: saturate(120%) blur(8px); background: linear-gradient(180deg, rgba(11,15,20,.85), rgba(11,15,20,.55)); border-bottom: 1px solid rgba(255,255,255,.06); z-index: 20; }
+    .nav { display:flex; align-items:center; justify-content:space-between; padding: 14px 0; }
+    .brand { display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing: .3px; }
+    .logo { width: 28px; height: 28px; background: conic-gradient(from 210deg, var(--accent), var(--accent-2)); border-radius: 8px; display:grid; place-items:center; box-shadow: 0 8px 30px rgba(98,210,255,.25); }
+    .logo:after { content:"Y"; font-weight:800; color:#0b0f14; }
+    .nav a { margin-left:16px; opacity:.9 }
+
+    .hero { display:grid; grid-template-columns: 1.2fr 1fr; gap: 36px; align-items:center; padding: 72px 0 36px; }
+    @media (max-width: 880px){ .hero { grid-template-columns: 1fr; padding-top: 36px; } }
+    .badge { display:inline-flex; align-items:center; gap:8px; padding: 6px 10px; border:1px solid rgba(255,255,255,.08); border-radius:999px; background: rgba(255,255,255,.03); font-size: 12px; color: var(--muted); }
+    .title { font-size: clamp(32px, 6vw, 56px); line-height: 1.08; margin: 10px 0 12px; font-weight: 800; letter-spacing: -.3px; }
+    .subtitle { color: var(--muted); font-size: clamp(15px, 2.6vw, 18px); }
+    .cta { display:flex; flex-wrap:wrap; gap:12px; margin-top: 24px; }
+    .btn { padding: 10px 16px; border-radius: 12px; border:1px solid rgba(255,255,255,.08); background:#182131; color:var(--text); font-weight:600; transition:.2s; }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 26px rgba(0,0,0,.25); }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b0f14; border: none; }
+
+    .cards { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 36px 0; }
+    @media (max-width: 1000px){ .cards { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px){ .cards { grid-template-columns: 1fr; } }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); border:1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 20px; min-height: 160px; position: relative; overflow:hidden; }
+    .card:before { content:""; position:absolute; inset:-1px; background-image: radial-gradient(600px 200px at 120% -10%, var(--grid), transparent), radial-gradient(600px 200px at -20% 110%, var(--grid), transparent); opacity:.6; pointer-events:none; }
+    .card h3 { margin: 6px 0 6px; font-size: 18px; }
+    .muted { color: var(--muted); font-size: 14px; }
+
+    section { padding: 38px 0; }
+    footer { padding: 30px 0 60px; color: var(--muted); font-size: 14px; }
+    .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 860px){ .grid-2 { grid-template-columns: 1fr; } }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: 14px; padding: 10px 12px; border-radius: 12px; background: #0e1520; border:1px solid rgba(255,255,255,.08); }
+    ul.clean { padding-left: 18px; margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="logo"></span> <span>Ynano</span></div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="badge">Interdisciplinary • Franconia • M.Sc. Student</span>
+        <h1 class="title">Nanotechnology & Lithography Simulation — across subjects with a "Y" signature.</h1>
+        <p class="subtitle">Hi, I’m <strong>Yuan</strong> (you can call me <strong>Y</strong>). I explore the intersection of <em>nanofabrication</em>, <em>lithography modeling</em>, and <em>software engineering</em> — building tools and experiments from simulation to UI.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="min-height: 220px">
+          <h3>Focus areas</h3>
+          <ul class="clean muted">
+            <li>Photo-/E-beam lithography simulation (resist + optics + proximity)</li>
+            <li>Data visualization & frontends (Vue/Vite/Tailwind)</li>
+            <li>Scientific computing (Python/NumPy) & automation</li>
+          </ul>
+          <h3 style="margin-top:14px">Currently learning</h3>
+          <ul class="clean muted">
+            <li>Inverse lithography & OPC</li>
+            <li>Device-scale modeling & metrology</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2>Research interests</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Resist & exposure models</h3>
+          <p class="muted">Exploring aerial image formation, PEB, and development kinetics; benchmarking compact models vs. FDTD/FEM references.</p>
+        </div>
+        <div class="card">
+          <h3>Layout & pattern fidelity</h3>
+          <p class="muted">OPC, SRAF placement, and error metrics; linking CD variation to process windows and stochastic effects.</p>
+        </div>
+        <div class="card">
+          <h3>UI for simulation</h3>
+          <p class="muted">Human-friendly controls for parameter sweeps, interactive plots, and reproducible workflows.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Selected projects</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>YnanoSim</h3>
+          <p class="muted">A toy lithography simulator with adjustable NA, σ, dose, and resist parameters. Plots aerial images & CDs, exports CSV.</p>
+          <p class="mono">Python • NumPy • Matplotlib</p>
+          <p><a href="#">GitHub repo</a> · <a href="#">Docs</a></p>
+        </div>
+        <div class="card">
+          <h3>MaskCraft</h3>
+          <p class="muted">Small utilities to generate line/space, contact arrays, and curvilinear test patterns for sensitivity checks.</p>
+          <p class="mono">TypeScript • Vite • Canvas</p>
+          <p><a href="#">GitHub repo</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <div class="grid-2">
+        <p class="muted">I’m a master student based in the Franconian region, working across subjects from physics to software. I like translating domain knowledge into practical tools and readable code. Open to research collaborations and internships.</p>
+        <div class="card">
+          <h3>Quick facts</h3>
+          <ul class="clean muted">
+            <li>Location: Franconia, DE</li>
+            <li>Interests: Nanotech, lithography, data viz</li>
+            <li>Languages: Python, TS/JS, Vue</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="grid-2">
+        <div class="card">
+          <p class="muted">Best way to reach me is via GitHub or email. I’m happy to share code, discuss simulations, or brainstorm interfaces for scientific tools.</p>
+          <p><strong>Links</strong></p>
+          <ul class="clean">
+            <li>GitHub: <a href="https://github.com/" target="_blank" rel="noreferrer">github.com/&lt;your-username&gt;</a></li>
+            <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+            <li>CV: <a href="#">Download PDF</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Site usage</h3>
+          <p class="muted">This page is a single static HTML file — perfect for GitHub Pages. Tweak the text, add project links, and you’re live.</p>
+          <p class="mono">index.html • no build step</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        © <span id="y"></span> Ynano — Built for GitHub Pages.  
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
